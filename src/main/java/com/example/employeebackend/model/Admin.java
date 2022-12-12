@@ -1,9 +1,22 @@
 package com.example.employeebackend.model;
 
+import javax.persistence.*;
+
+@Entity
+
 public class Admin {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column(name = "Email")
     private String email;
+
+    @Column(name = "Name")
     private String name;
+
+    @Column(name = "Password")
     private String password;
 
     public Admin() {
