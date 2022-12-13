@@ -6,5 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RegistrationRepo extends JpaRepository<Admin,Integer> {
-   public Admin getByEmail(String email);
+    Admin getByEmail(String email);
+
+   Admin findByEmailAndPassword(String email, String password);
 }

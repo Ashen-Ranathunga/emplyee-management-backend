@@ -5,6 +5,8 @@ import com.example.employeebackend.repo.RegistrationRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class RegistrationService {
 
@@ -18,5 +20,13 @@ public class RegistrationService {
 
     public Admin searchByEmail (String email){
         return registrationRepo.getByEmail(email);
+    }
+
+    public Admin fetchEmailAndPassword(String email, String password){
+        return registrationRepo.findByEmailAndPassword(email,password);
+    }
+
+    public List<Admin> getAllAdmins(){
+        return registrationRepo.findAll();
     }
 }
